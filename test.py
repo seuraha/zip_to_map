@@ -8,6 +8,12 @@ class TestZipcodeToMap(unittest.TestCase):
             zipcode_to_map(zipcodes, us_map=True)
         except Exception as e:
             self.fail(f"zipcode_to_map raised an exception {e}")
+
+        zipcodes = [95110, 48104]
+        try:
+            zipcode_to_map(zipcodes, us_map=True)
+        except Exception as e:
+            self.fail(f"zipcode_to_map raised an exception {e}")
         
 if __name__ == "__main__":
     unittest.main()

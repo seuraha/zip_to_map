@@ -5,7 +5,7 @@ import pandas as pd
 
 def zipcode_to_map(
         zipcode_array,
-        us_map=False,
+        us_map=True,
         lat_bounds=10,
         lon_bounds=10):
     """
@@ -24,6 +24,9 @@ def zipcode_to_map(
         location = nomi.query_postal_code(zipcode)
         return (location.latitude, location.longitude) if not pd.isnull(location.latitude) else (None, None)
 
+    zipcode_df['coordinates'] = zipcode_df['zipcode'].apply(get_coordinates)
+    zipcode_df[['latitude', 'longitude']] = pd.DataFrame(zipcode_df['coordinates'].tolist(), index=zipcode_df.index)
+
     if us_map:
         llcrnrlat=24; urcrnrlat=50; llcrnrlon=-125; urcrnrlon=-66;
     else:
@@ -32,9 +35,6 @@ def zipcode_to_map(
         urcrnrlat=zipcode_df['latitude'].max() + lat_bounds
         llcrnrlon=zipcode_df['longitude'].min() - lon_bounds
         urcrnrlon=zipcode_df['longitude'].max() + lon_bounds
-
-    zipcode_df['coordinates'] = zipcode_df['zipcode'].apply(get_coordinates)
-    zipcode_df[['latitude', 'longitude']] = pd.DataFrame(zipcode_df['coordinates'].tolist(), index=zipcode_df.index)
 
     fig, ax = plt.subplots(figsize=(10, 6))
     m = Basemap(
