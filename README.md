@@ -1,7 +1,7 @@
 # zip_to_map
 
 ## Overview
-This library provides a function to plot the locations of zipcodes on a map using Basemap and pgeocode.
+This library provides a function to plot the locations of zipcodes on a map. Powered by [Basemap](https://matplotlib.org/basemap/stable/) and [pgeocode](https://pgeocode.readthedocs.io/en/latest/).
 
 ## Installation
 ```bash
