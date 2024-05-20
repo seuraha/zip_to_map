@@ -3,7 +3,7 @@ from mpl_toolkits.basemap import Basemap
 import matplotlib.pyplot as plt
 import pandas as pd
 
-def zipcode_to_map(
+def zip_to_map(
         zipcode_array,
         us_map=True,
         lat_bounds=10,
