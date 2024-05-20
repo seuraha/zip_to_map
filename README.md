@@ -11,7 +11,7 @@ pip install -r requirements.txt
 
 ## Usage
 ```python
-from zip_to_map import zipcode_to_map
+import zipcode_to_map
 
 zipcodes = ['90210', '10001', '30301']
 zipcode_to_map(zipcodes, us_map=True)

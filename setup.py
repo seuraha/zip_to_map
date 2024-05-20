@@ -3,6 +3,7 @@ from setuptools import setup, find_packages
 setup(
     name="zip_to_map",
     version="0.1",
+    py_modules=["zipcode_to_map"],
     packages=find_packages(),
     install_requires=[
         "pgeocode>=0.5.0",
