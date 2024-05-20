@@ -6,7 +6,6 @@ This library provides a function to plot the locations of zipcodes on a map. Pow
 ## Installation
 ```bash
 pip install git+https://github.com/seuraha/zip_to_map.git
-pip install -r requirements.txt
 ```
 
 ## Usage
