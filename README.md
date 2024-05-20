@@ -1,4 +1,4 @@
-# zip_to_map
+# `zip_to_map`
 
 ## Overview
 This library provides a function to plot the locations of zipcodes on a map. Powered by [Basemap](https://matplotlib.org/basemap/stable/) and [pgeocode](https://pgeocode.readthedocs.io/en/latest/).
@@ -19,3 +19,5 @@ zip_to_map(zipcodes, us_map=True)
 zipcodes = [95110, 48104]
 zip_to_map(zipcodes, us_map=True)
 ```
+
+![Example](/test/test1.png)
